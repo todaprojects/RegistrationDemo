@@ -1,0 +1,35 @@
+﻿@page
+@model RegistrationModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+@if (Model.RegistrationForm?.Name != null
+     && Model.RegistrationForm?.Age != null
+     && Model.RegistrationForm?.Email != null)
+{
+    <h1>Hello, @Model.RegistrationForm.Name!</h1>
+    <p>You've successfully registered!</p>
+}
+else
+{
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="RegistrationForm.Name"></label>
+            <input asp-for="RegistrationForm.Name" class="form-control" placeholder="Enter your name">
+            <span asp-validation-for="RegistrationForm.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistrationForm.Age"></label>
+            <input asp-for="RegistrationForm.Age" class="form-control" placeholder="Enter your age">
+            <span asp-validation-for="RegistrationForm.Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RegistrationForm.Email"></label>
+            <input asp-for="RegistrationForm.Email" class="form-control" placeholder="Enter your email">
+            <span asp-validation-for="RegistrationForm.Email" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success form-control">Register</button>
+    </form>
+}
