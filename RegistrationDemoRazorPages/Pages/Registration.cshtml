@@ -4,9 +4,7 @@
     ViewData["Title"] = "Registration";
 }
 
-@if (Model.RegistrationForm?.Name != null
-     && Model.RegistrationForm?.Age != null
-     && Model.RegistrationForm?.Email != null)
+@if (Model.RegistrationForm?.Name != null)
 {
     <h1>Hello, @Model.RegistrationForm.Name!</h1>
     <p>You've successfully registered!</p>
